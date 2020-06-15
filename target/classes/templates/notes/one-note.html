@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${note.getTitle()}">Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="note-container" th:switch="${note}" >
+    <h2 th:case="null">No such note!</h2>
+    <div th:case="*" >
+        <div class="single-note">
+            <div class="title" th:text="${note.getTitle()}"></div><br>
+            <div class="creator" th:text="${note.getCreator()}"></div><br>
+            <div class="text" th:remove="tag" th:utext="${note.getText()}"></div><br>
+            <input type="text" id="link" readonly="readonly"><br>
+            <button type="button" onclick="copyLink()">Get link to this note</button>
+            <button ><a th:onclick="return confirm('Are you sure?')" th:href="@{/notes}">Back</a></button><br>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("link").value=window.location.href.toString();
+    function copyLink() {
+        var copyText = document.getElementById("link");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    }
+</script>
+</body>
+</html>

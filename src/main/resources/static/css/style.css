@@ -1,0 +1,123 @@
+html {
+    color: lightblue;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+body{
+    color: black;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: grey url("1_wFihz619ZQpIBjGXKasHkQ.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.note-container{
+    float: left;
+    width: 600px;
+}
+a {
+    text-decoration:none;
+    font-family:Arial;
+    display: block;
+}
+/* A link that has not been visited */
+a:link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* A link that has been visited */
+a:visited {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.single-note{
+    margin: 0 0 5vw 10vw;
+    padding: 2vw 3vh;
+    border: 1px solid black;
+    font: normal 16px/normal "Times New Roman", Times, serif;
+    text-align: left;
+}
+
+button {
+    background:linear-gradient(to bottom, grey 5%, #408c99 100%);
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:12px;
+    padding:13px 32px;
+    text-shadow:0px 1px 0px #3d768a;
+}
+
+button:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+}
+button:active {
+    position:relative;
+    top:1px;
+}
+
+aside{
+    position:fixed;
+    right: 0;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, grey 5%, #408c99 100%);
+    background-color:#599bb3;
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:12px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+}
+
+aside:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+}
+
+.single-note:hover{
+    background-color: darkgray;
+    color: black;
+}
+
+.przycisk{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+    background:linear-gradient(to bottom, grey 5%, #408c99 100%);
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:12px;
+    padding:13px 32px;
+    text-shadow:0px 1px 0px #3d768a;
+}
+
+.przycisk:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+}

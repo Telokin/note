@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegraph 2.0</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<aside>
+    <button><a th:href="@{/notes/add}">Add Note</a></button>
+    <div class="search-container">
+        <form action="/notes/category" method="get">
+            <h3>Search by hashtag:</h3><br>
+            <input type="text" name = "hash" ><br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</aside>
+<div class="note-container" th:switch="${notes}" >
+    <h2 th:case="null">No notes yet!</h2>
+    <div th:case="*" >
+        <div class="single-note" th:each="note: ${notes}">
+            <div class="title" th:text="${note.getTitle()}"></div><br>
+            <div class="creator" th:text="${note.getCreator()}"></div><br>
+            <div class="categories" th:utext="${note.getCategories()}"></div><br>
+            <div class="text" th:remove="tag" th:utext="${note.getText()}"></div><br>
+            <button><a th:href="@{/notes/edit/{id}(id=${note.getId()})}">Edit</a></button>
+            <button ><a th:onclick="return confirm('Are you sure?')" th:href="@{/notes/delete/{id}(id=${note.getId()})}">Delete</a></button><br>
+            <button><a th:href="@{/notes/{id}(id=${note.getId()})}">Show</a></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
